@@ -1,11 +1,113 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-</head>
-<body>
-  
-</body>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Numbers • Sorteador de Números</title>
+
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <main class="page">
+      <section class="mock">
+        <div class="frame">
+          <header class="top">
+            <div class="brand">
+              <span class="brand__icon" aria-hidden="true"></span>
+              <span class="brand__name">NUMBERS</span>
+            </div>
+          </header>
+
+          <div class="content">
+            <div class="left">
+              <p class="meta">ONLINE • GRATUITO</p>
+              <h1 class="title">SORTEADOR<br />DE NÚMEROS</h1>
+
+              <p class="subtitle">
+                Defina o intervalo e a quantidade de números, clique em
+                <strong>“Sortear”</strong> e veja os resultados na tela.
+                É rápido e fácil!
+              </p>
+
+              <div class="results" aria-live="polite" aria-label="Resultados do sorteio">
+                <div class="results__header">
+                  <h2>Resultado</h2>
+                  <button id="btnClear" class="btn btn--ghost" type="button">
+                    Limpar
+                  </button>
+                </div>
+
+                <div id="resultsGrid" class="results__grid"></div>
+
+                <p id="hint" class="hint">
+                  Dica: ative “Não repetir número” para sortear sem duplicar.
+                </p>
+              </div>
+            </div>
+
+            <aside class="panel" aria-label="Painel do sorteio">
+              <h2 class="panel__title">QUERO SORTEAR:</h2>
+              <p class="panel__desc">
+                defina o intervalo e a quantidade de números, clique em “Sortear”
+                e veja os resultados na tela. É rápido e fácil!
+              </p>
+
+              <form id="form">
+                <div class="row">
+                  <div class="field">
+                    <label for="qtd">NÚMEROS</label>
+                    <input
+                      id="qtd"
+                      name="qtd"
+                      inputmode="numeric"
+                      autocomplete="off"
+                      placeholder="2"
+                    />
+                  </div>
+
+                  <div class="field">
+                    <label for="min">DE</label>
+                    <input
+                      id="min"
+                      name="min"
+                      inputmode="numeric"
+                      autocomplete="off"
+                      placeholder="1"
+                    />
+                  </div>
+
+                  <div class="field">
+                    <label for="max">ATÉ</label>
+                    <input
+                      id="max"
+                      name="max"
+                      inputmode="numeric"
+                      autocomplete="off"
+                      placeholder="100"
+                    />
+                  </div>
+                </div>
+
+                <label class="toggle">
+                  <input id="noRepeat" type="checkbox" />
+                  <span class="toggle__ui" aria-hidden="true"></span>
+                  <span class="toggle__text">Não repetir número</span>
+                </label>
+
+                <div id="error" class="alert" role="alert" hidden></div>
+
+                <button id="btnDraw" class="btn btn--primary" type="submit">
+                  <span> SORTEAR </span>
+                  <span class="arrow" aria-hidden="true">→</span>
+                </button>
+              </form>
+            </aside>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <script src="scripts.js"></script>
+  </body>
 </html>
